@@ -99,14 +99,16 @@ function Accueil () {
 
   // --- Renderers ---
   const renderHome = () => (
-    <div className="space-y-8 animate-in fade-in duration-500 mt-10">
-      <div className="bg-base-200 p-8 rounded-2xl shadow-sm border-l-8 border-indigo-600">
-        <img src="/logo.webp" alt="" className='flex mx-auto w-full max-w-100' />
-        <h2 className="text-3xl font-bold text-slate-800 mb-4">Préparation Concours ENSPD</h2>
-        <p className="text-slate-600 text-lg leading-relaxed">
-          Bienvenue sur votre plateforme d'étude interactive dédiée à la <strong>Mécatronique</strong>. 
-          Ce portail transforme les concepts théoriques du guide d'admission en outils de simulation pratiques.
-        </p>
+    <div className="space-y-8 animate-in fade-in duration-500 md:mt-10">
+      <div className="bg-base-200 rounded-2xl shadow-sm">
+        <img src="/durinfo.png" alt="" className='flex mx-auto w-full max-h-150 rounded-xl' />
+        <div className='mt-1 p-4'>
+          <h2 className="text-3xl font-bold text-indigo-800 mb-4 uppercase">Mécatro Durinfo</h2>
+          <p className="text-slate-600 text-lg leading-relaxed">
+            Bienvenue sur votre plateforme d'étude interactive dédiée à la <strong>Mécatronique</strong>. 
+            Ce portail transforme les concepts théoriques du guide d'admission en outils de simulation pratiques.
+          </p>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -436,8 +438,8 @@ function Accueil () {
       {/* Sidebar Desktop */}
       <aside className="hidden md:flex w-72 flex-col bg-base-200 border-r border-slate-200 shadow-xl z-20">
         <div className="p-8">
-          <h1 className="text-2xl font-black text-indigo-600 leading-tight">MÉCATRO<br/>ENSPD</h1>
-          <p className="text-xs font-bold text-slate-400 mt-2 uppercase tracking-widest">Guide Interactif 2024</p>
+          <h1 className="text-2xl font-black text-indigo-600 leading-tight">MÉCATRO<br/>DURINFO</h1>
+          <p className="text-xs font-bold text-slate-400 mt-2 uppercase tracking-widest">Guide Interactif 2026</p>
         </div>
         <nav className="flex-1 space-y-1 px-4">
           {[
@@ -480,8 +482,11 @@ function Accueil () {
       {isMobileMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-slate-900/50 z-40" onClick={() => setIsMobileMenuOpen(false)}>
           <div className="bg-base-200 w-64 h-full p-6 animate-in slide-in-from-left duration-300" onClick={e => e.stopPropagation()}>
-             <nav className="mt-12 space-y-4">
-               {['home', 'logique', 'Electricité', 'Mécanique', 'Vocabulaire', 'quiz'].map(id => (
+             <nav className="space-y-2">
+              <div className='grid place-content-center'>
+                <img src="/logo.webp" className='w-30' alt="" />
+              </div>
+               {['home', 'logique', 'elec', 'meca', 'vocab', 'quiz'].map(id => (
                  <button 
                   key={id}
                   onClick={() => { setActiveTab(id); setIsMobileMenuOpen(false); }}
